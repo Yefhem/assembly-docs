@@ -32,7 +32,7 @@ Bu sayı sisteminin tabanı ikidir. 0 ve 1 rakamlardan oluşur. Bu sistemde bulu
 2 üzeri 4 = 16		(0)
 2 üzeri 5 = 32		(0)
 2 üzeri 6 = 64		(0)
-2 üzeri 7 = 128	    (0)
+2 üzeri 7 = 128	        (0)
 ```
 
 Aktif olan bitler görüldüğü üzere sıfırıncı ve üçüncü bitler bunların toplamları ise **1 + 8 = 9** olarak bulunur.
@@ -51,7 +51,7 @@ Virgülün sol tarafında kalan kısım, yukarıdaki örnekte olduğu gibi sağd
 2 üzeri 0 = 1		(1)
 2 üzeri 1 = 2		(1)
 2 üzeri 2 = 4		(1)
-2 üzeri 3 = 8	    (1)
+2 üzeri 3 = 8	        (1)
 ```
 
 Aktif olan bitleri toplayacak olursak...
@@ -78,7 +78,7 @@ Bunun örneği yukarıdaki örneklerde yaptık. Yine de bir örnek daha yapalım
 2 üzeri 4 = 16		(1)
 2 üzeri 5 = 32		(0)
 2 üzeri 6 = 64		(1)
-2 üzeri 7 = 128	    (0)
+2 üzeri 7 = 128	        (0)
 ```
 
 Aktif bitleri toplayarak onluk sistemde karşılığını bulalım.
