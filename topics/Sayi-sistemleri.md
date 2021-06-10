@@ -176,6 +176,29 @@ Sekizlik sistemde **65** değerinin ikili sistemde karşılığını bulalım...
 Sağ taraftan sola doğru değerlerimizi birleştirirsek ayrıca başına da iki sıfır ekleyelim. Sonuç olarak sekizlik sistemdeki 65 değerinin karşılığı ikili sistemde (00110101) değerine eşittir. 
 ```
 
+Bir başka örnek yapacak olursak..
+
+Sekizlik sistemde **232** değerinin ikili sistemde karşılığını bulalım...
+
+```
+2 rakamının ikili sistemde karşılığı = (010)
+    = 2⁰ = 1		(0)
+    = 2¹ = 2 		(1)
+    = 2² = 4		(0)
+3 rakamının ikili sistemde karşılığı = (011)
+    = 2⁰ = 1		(1)
+    = 2¹ = 2 		(1)
+    = 2² = 4		(0)
+2 rakamının ikili sistemde karşılığı = (010)
+    = 2⁰ = 1		(0)
+    = 2¹ = 2 		(1)
+    = 2² = 4		(0)
+```
+
+```
+Sağ taraftan sola doğru değerlerimizi birleştirelim. Sonuç olarak sekizlik sistemdeki 232 değerinin karşılığı ikili sistemde (10011010) değerine eşittir. 
+```
+
 ### Sekizlik Sistemden(Octal) > Onluk Sisteme(Decimal) 
 
 Bunun örneği yukarıdaki örnekte yaptık. Yine de bir örnek daha yapalım.
@@ -189,5 +212,29 @@ Sekizlik sistemde **232** değerinin onluk sistemde karşılığını bulalım..
         = 128 + 24 + 2 = 154
 ```
 ```
-Sonuç olarak sekizlik sistemdeki 232 değerinin karşılığı onluk sistemde 154 değerine eşittir.
+Sonuç olarak sekizlik sistemdeki 232 değerinin karşılığı onluk sistemde (154) değerine eşittir.
+```
+
+### Sekizlik Sistemden(Octal) > Onaltılık Sisteme(Hexadecimal)
+
+Sekizlik sistemdek bir değeri onaltılık sisteme dönüştürürken ilk olarak yapmamız gereken sekizlik sistemdeki değeri onluk sisteme çevirmektir. Daha sonra onluk sistemdeki değeri 16'ya bölmemiz gerekir. Bu işlem sonucu ilk bölüm daha sonra kalan yazılır. Örneklerle pekiştirelim.
+
+Sekizlik sistemde **232** değerinin onaltılık sistemde karşılığını bulalım...
+```
+Sekizlik sistemdeki 232 değerinin onluk sistemde karşılığının 154 olduğunu bulmuştuk. Sırada 154 sayılısını 16'ya bölmeye geldi
+
+154/16 = bölüm (9) kalan ise (10=A)
+       = 9A
+```
+```
+Not:
+    A=10
+    B=11
+    C=12
+    D=13
+    E=14
+    F=15
+```
+```
+Sonuç olarak sekizlik sistemdeki 232 değerinin karşılığı onaltılık sistemde (9A) değerine eşittir.
 ```
