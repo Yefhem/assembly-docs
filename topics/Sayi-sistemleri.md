@@ -20,7 +20,7 @@ Bu sayı sisteminin tabanı ikidir. 0 ve 1 rakamlardan oluşur. Bu sistemde bulu
 
 İkili sistem gündelik hayatta kullandığımız ondalık sistem ile benzer şekilde çalışır. Ondalık sistemde sağdan 0 ile başlayarak her sayı 10 üzeri sayının bulunduğu basamak değeriyle çarpılıyordu. İkili sistemin de çalışma mantığı benzerdir. Sağdan 0 ile başlayarak her basamakta 2’nin bir kuvveti alınır. Daha sonra aktif olan(yani 1) bitlerin değerleri toplanır. Bir örnek yaparak pekiştirelim...
 
-### Örnek 1
+***Örnek 1***
 
 İkili sistemde **00001001** değerini inceleyelim. Sağdan başlarsak;
 
@@ -37,7 +37,7 @@ Bu sayı sisteminin tabanı ikidir. 0 ve 1 rakamlardan oluşur. Bu sistemde bulu
 
 Aktif olan bitler görüldüğü üzere sıfırıncı ve üçüncü bitler bunların toplamları ise **1 + 8 = 9** olarak bulunur.
 
-### Örnek 2
+***Örnek 2***
 
 İkili sistemde farklı bir örnek olarak virgüllü bir değer olan **1111,011** değerini inceleyelim. Burada dikkat edilmesi gereken nokta;
 
@@ -48,10 +48,10 @@ Virgülün sol tarafında kalan kısım, yukarıdaki örnekte olduğu gibi sağd
 2 üzeri -2 = 1/4 	(1)
 2 üzeri -1 = 1/2	(0)
 ,
-2 üzeri 0 = 1		(1)
-2 üzeri 1 = 2		(1)
-2 üzeri 2 = 4		(1)
-2 üzeri 3 = 8	        (1)
+2⁰ = 1		(1)
+2¹ = 2		(1)
+2² = 4		(1)
+2³ = 8	        (1)
 ```
 
 Aktif olan bitleri toplayacak olursak...
@@ -71,14 +71,14 @@ Bunun örneği yukarıdaki örneklerde yaptık. Yine de bir örnek daha yapalım
 İkili sistemde **01011000** değerinin onluk sistemde karşılığını bulalım...
 
 ```
-2 üzeri 0 = 1		(0)
-2 üzeri 1 = 2 		(0)
-2 üzeri 2 = 4		(0)
-2 üzeri 3 = 8		(1)
-2 üzeri 4 = 16		(1)
-2 üzeri 5 = 32		(0)
-2 üzeri 6 = 64		(1)
-2 üzeri 7 = 128	        (0)
+2⁰ = 1		(0)
+2¹ = 2 		(0)
+2² = 4		(0)
+2³ = 8		(1)
+2⁴ = 16		(1)
+2⁵ = 32		(0)
+2⁶ = 64		(1)
+2⁷ = 128	        (0)
 ```
 
 Aktif bitleri toplayarak onluk sistemde karşılığını bulalım.
@@ -127,4 +127,67 @@ Burada da binary değerimizi iki eşit parçaya ayırmalıyız. Bu işlemden son
 Soldan başlayarak değeri yazacak olursak karşımıza şöyle bir sonuç çıkar:
 ```
 ikili sistemde 01011000 = onaltılık sistemde 58 değerine eşittir.
+```
+
+## Octal (Sekizlik Sistem)
+
+Bu sayı sisteminin tabanı sekizdir. 0,1,2,3,4,5,6,7 rakamlarından oluşur. 
+
+## Sekizlik Sistemde Basamak Kavramı
+
+Ondalık sistem ile benzer şekilde çalışır. Sağdan 0 ile başlayarak her sayı 8 üzeri sayının bulunduğu basamak değeriyle çarpılır. Ardından basamak değerleri toplanır. Bir örnek yapıp dönüşümlere geçelim.
+
+***Örnek 1***
+
+Sekizlik sistemde **123** değerini inceleyelim. Sağdan başlarsak;
+```
+= 1 * (8²) + 2 * (8¹) + 3 * (8⁰)
+
+    = (1 * 64) + (2 * 8) + (3 * 1) 
+
+        = 64 + 16 + 3 = 83
+```
+```
+Sonuç olarak sekizlik sistemdeki 123 değerinin karşılığı onluk sistemde 83 değerine eşittir.
+```
+
+## Dönüşümler
+
+### Sekizlik Sistemden(Octal) > İkili Sisteme(Binary)
+
+Hatırlayacağınız üzere ikili sistemden sekizlik sisteme dönüşüm yaparken bit'leri üçerli gruplara ayırıyorduk. Burada da tam/keskin bir dönüşüm işlemi olmasa da benzer bir işlem uygulayacağız. Öncelikle dönüştürmek istediğimiz sekizlik sistemdeki değerin en sağından başlayarak o rakamın ikili sistemde karşılığını bulmamız gerekiyor. Aynı işlem sol tarafa doğru devam eder ve en son ikili değerler birleştirilir. Bilindiği üzere sekizlik sistemde maksimum değer 7'dir. İkili sistemde düşük değerli ilk üç bit'in toplamının alabileceği maksimum değer de 7'dir. Sayılara üçerli gruplara ayırmamızdaki temel etken de bu aslında. 
+Eğer sekizlik sistemdeki değerimiz iki rakamdan oluşuyor ise sol tarafa ek olarak iki sıfır eklenir.
+Örnek yapıp daha da pekiştirelim.
+
+Sekizlik sistemde **65** değerinin ikili sistemde karşılığını bulalım...
+
+```
+5 rakamının ikili sistemde karşılığı = (101)
+    = 2⁰ = 1		(1)
+    = 2¹ = 2 		(0)
+    = 2² = 4		(1)
+6 rakamının ikili sistemde karşılığı = (110)
+    = 2⁰ = 1		(0)
+    = 2¹ = 2 		(1)
+    = 2² = 4		(1)
+```
+
+```
+Sağ taraftan sola doğru değerlerimizi birleştirirsek ayrıca başına da iki sıfır ekleyelim. Sonuç olarak sekizlik sistemdeki 65 değerinin karşılığı ikili sistemde (00110101) değerine eşittir. 
+```
+
+### Sekizlik Sistemden(Octal) > Onluk Sisteme(Decimal) 
+
+Bunun örneği yukarıdaki örnekte yaptık. Yine de bir örnek daha yapalım.
+
+Sekizlik sistemde **232** değerinin onluk sistemde karşılığını bulalım...
+```
+= 2 * (8²) + 3 * (8¹) + 2 * (8⁰)
+
+    = (2 * 64) + (3 * 8) + (2 * 1) 
+
+        = 128 + 24 + 2 = 154
+```
+```
+Sonuç olarak sekizlik sistemdeki 232 değerinin karşılığı onluk sistemde 154 değerine eşittir.
 ```
