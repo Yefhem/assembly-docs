@@ -75,7 +75,7 @@ LEA hedef,kaynak
 ```
 kaynak içerisindeki başlangıç adresi LEA komutu sayesinde hedef adrese aktarılır.
 
-### MOV komutunun kullanım şekilleri
+### LEA komutunun kullanım şekilleri
 ```
 hedef,kaynak
 
@@ -84,6 +84,7 @@ REG,memory
 ## Dikkat Edilmesi Gerekenler
 
 1-Başlangıç adres tutucuları olan bx,bp ve indeks kaydedicileri si,di kullanılmalıdır.
+
 2-LEA komutu ile elde edilecek veri 16 bit uzunluğunda olduğu için hedef  mutlaka word tipinde bir register olmalıdır.
 
 ```
