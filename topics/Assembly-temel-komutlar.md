@@ -66,6 +66,34 @@ Burada görüldüğü üzere ilk olarak **58h** değeri 8 bitlik bir register ol
 
 byte cinsinden içerisinde **55h** değerini tutan bir number değişkenimiz var. Number değişkeninin tuttuğu **55h** değeri mov ile bl değişkenine kopyalanıyor, daha sonra bl değişkeninde bulunan **55h** değeri al registerine kopyalanıyor.
 
+## XCHG Komutu
+
+XCHG(exchange) yani yer değiştirme komutu operandlar arası yer değişikliği yapar.
+
+```
+XCHG operand1,operand2
+```
+operand1'deki değeri operand2'ye, operand2'deki değeri operand1'e aktarır.
+
+### XCHG komutunun kullanım şekilleri
+```
+operand1,operand2
+
+REG,memory
+memory,REG
+REG,REG
+```
+
+## Örnekler
+
+![xchg](../assets/img/temel-komutlar-xchg.png)
+
+al registerine `14h` değeri, ah registerine ise `25h` değeri aktarılıyor. Daha sonra XCHG komutu ile al'deki değer ile ah'deki değer yer değiştiriyor.
+
+![xchg](../assets/img/temel-komutlar-xchg2.png)
+
+Bu örnekte ise ilk olarak al registerine `14h` değeri aktarılıyor. Daha sonra XCHG komutu ile al registeri içerisindeki değer ile sayi degiskeni içerisindeki değer yer değiştiriyor. sayi değişkeni içerisine `14h`, al registerinin içerisine ise `25h` değeri aktarılıyor.
+
 ## LEA Komutu
 
 LEA(Load Effective Address) komutunun temel işlevi kaynaktaki offset adresini(başlangıç adresini) hedefe yükleyen komuttur. LEA komutu bayrakları etkilemez.
@@ -103,3 +131,4 @@ byte cinsinden içerisinde **12h** değerini tutan bir number değişkenimiz var
 ![lea2](../assets/img/temel-komutlar-lea2.png)
 
 Bu örnekte ise list isimli dizinin başlangıç adresi bx registeri içerisine alınıyor. Daha sonra `[bx]` ile başlangıç adresinde bulunan değer ax registerine kopyalanır. Görüldüğü üzere ax registerinin içerisinde list dizisinin ilk elemanı olan `1000h` değeri kopyalanmıştır.
+
