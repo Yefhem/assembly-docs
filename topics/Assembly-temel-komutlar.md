@@ -68,7 +68,7 @@ byte cinsinden içerisinde **55h** değerini tutan bir number değişkenimiz var
 
 ## XCHG Komutu
 
-XCHG(exchange) yani yer değiştirme komutu operandlar arası yer değişikliği yapar.
+XCHG(exchange) yani yer değiştirme komutu operandlar arası yer değişikliği yapar. XCHG komutu bayrakları etkilemez.
 
 ```
 XCHG operand1,operand2
@@ -132,3 +132,64 @@ byte cinsinden içerisinde **12h** değerini tutan bir number değişkenimiz var
 
 Bu örnekte ise list isimli dizinin başlangıç adresi bx registeri içerisine alınıyor. Daha sonra `[bx]` ile başlangıç adresinde bulunan değer ax registerine kopyalanır. Görüldüğü üzere ax registerinin içerisinde list dizisinin ilk elemanı olan `1000h` değeri kopyalanmıştır.
 
+## INC Komutu
+
+INC(Increment) komutu registerları veya memorydeki herhangi bir değeri 1 arttırır. ADD komutuna benzer bir işlevi vardır. Carry Flag(elde bayrağı - CF) dışında diğer bayraklar etkilenir.
+
+```
+INC reg or memory
+```
+
+## Dikkat Edilmesi Gerekenler
+
+1-Anlık değerlerde arttırma işlemi yapılamaz(Örn: 5,42h,11000001b vb.)
+```
+INC 20h   -> yanlış bir kullanımdır.
+``` 
+
+## Örnek
+
+![inc](../assets/img/temel-komutlar-inc.png)
+
+al değişkenine `14h` değeri aktarılıyor ardından INC ile al registeri içerisindeki değer 1 arttırılıyor ve al registeri içerisindeki değer `15h` oluyor. Daha sonra num değişkeni INC komutu ile 1 arttırılarak `52h` değerini alıyor.
+
+## DEC Komutu
+
+DEC(Decrement) komutu registerları veya memorydeki herhangi bir değeri 1 azaltır. Carry Flag(elde bayrağı - CF) dışında diğer bayraklar etkilenir.
+
+```
+DEC reg or memory
+```
+
+## Dikkat Edilmesi Gerekenler
+
+1-INC komutunda olduğu gibi anlık değerlerde eksiltme işlemi yapılamaz.
+```
+DEC 11100101b   -> yanlış bir kullanımdır.
+``` 
+
+## Örnek
+
+INC komutunda kullandığımız örneğin aynısını DEC için de yapalım.
+
+![inc](../assets/img/temel-komutlar-dec.png)
+
+al değişkenine `14h` değeri aktarılıyor ardından DEC ile al registeri içerisindeki değer 1 azaltılıyor ve al registeri içerisindeki değer `13h` oluyor. Daha sonra num değişkeni INC komutu ile 1 azaltılarak `51h` değerini alıyor.
+
+## XLAT/XLATB Komutu
+
+XLAT/XLATB(Translate byte) komutunu genelde bir dizideki elemanı al kaydedicisine çekmek istediğimiz zaman kullanırız.
+Komutun işleyişi şu şekildedir; ilk olarak istenen elemanın konumu al kaydedicisine çekilir, aynı zamanda da bx içerisinde de dizinin başlangıç adresi bulunması gerekmektedir. XLAT/XLATB komutu bayrakları etkilemez. Örnekler üzerinden daha iyi anlaşılacaktır.
+
+```
+XLATB   -> Herhangi bir operand almaz. Sade şekilde kullanılır. 
+```
+## Örnekler
+
+![xlatb](../assets/img/temel-komutlar-xlatb.png)
+
+Örneği açıklayacak olursak ilk olarak bx registerisi içerisine numbers isimli dizinin başlangıç adresi aktarıldı. Daha sonra numbers dizisinde hangi elemana ulaşmak istiyorsak o elemanın index numarasını al registerisi içerisine aktardık. Ardından XLATB komutunu da yazdık. Sonuç olarak al registerisi içerisine numbers dizisinin 3. indexi olan `13h` aktarıldı.
+
+![xlatb2](../assets/img/temel-komutlar-xlatb2.png)
+
+Buradaki örnekte ise binarylerden oluşan bir numbers dizimiz mevcut. Bu dizinin başlangıç adresini bx registerisi içerisine aktarıyoruz. Daha sonra numbers dizisinde hangi elemana ulaşmak istiyorsak o elemanın index numarasını al registerisi içerisine aktardık. Ardından XLATB komutunu da yazdık. Sonuç olarak numbers dizisinin 1. indexinde bulunan  `01101100b` değeri al registeri içerisine aktarıldı.
