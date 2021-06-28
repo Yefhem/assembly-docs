@@ -30,7 +30,7 @@ SREG,REG
 yapamazsınız. 
 
 ```
-MOV memory,memory    -> yanlış bir kullanımdır.
+MOV memory,memory    ; yanlış bir kullanımdır.
 ```
 
 Bu işlemi yapmak için taşınacak veri önce register'lardan birine aktarılmalıdır.
@@ -38,22 +38,22 @@ Bu işlemi yapmak için taşınacak veri önce register'lardan birine aktarılma
 2-Hedef ve kaynak eşit boyutlarda olmak zorundadır. Biri 8 bit register iken diğeri 16 bit register olamaz.
 
 ```
-MOV ax,al   -> yanlış bir kullanımdır.
-MOV ax,bx   -> doğru bir kullanımdır.
+MOV ax,al   ; yanlış bir kullanımdır.
+MOV ax,bx   ; doğru bir kullanımdır.
 ``` 
 
 3-Bir segment register değeri başka bir segment register içerisine direkt olarak atanamaz. Öncelikle genel kaydedicilere veri yüklenmelidir. Ayrıca segment kaydedicilere doğrudan bir veri taşıyamayız.
 
 ```
-MOV ds,es   -> yanlış bir kullanımdır.
-MOV ds,654h -> yanlış bir kullanımdır.
+MOV ds,es   ;; yanlış bir kullanımdır.
+MOV ds,654h ;; yanlış bir kullanımdır.
 ```  
 4-Segment kaydedicilerine sadece
 16 bitlik boyutunda değerler yüklenebilir. Genel kaydedicilerin 16 bitlik kısımları kullanılmalıdır(ax,bx vb..)
 
 ```
-MOV ds,al  -> yanlış bir kullanımdır.
-MOV ds,ax  -> doğru bir kullanımdır.
+MOV ds,al  ;; yanlış bir kullanımdır.
+MOV ds,ax  ;; doğru bir kullanımdır.
 ```  
 5-CS ve IP kaydedicilerinin değerlerini ayarlamak için kullanılamaz.
 
@@ -68,16 +68,16 @@ byte cinsinden içerisinde **55h** değerini tutan bir number değişkenimiz var
 
 ## XCHG Komutu
 
-XCHG(exchange) yani yer değiştirme komutu operandlar arası yer değişikliği yapar. XCHG komutu bayrakları etkilemez.
+XCHG(exchange) yani yer değiştirme komutu degerler arası yer değişikliği yapar. XCHG komutu bayrakları etkilemez.
 
 ```
-XCHG operand1,operand2
+XCHG deger1,deger2
 ```
-operand1'deki değeri operand2'ye, operand2'deki değeri operand1'e aktarır.
+deger1'deki değeri deger2'ye, deger2'deki değeri deger1'e aktarır.
 
 ### XCHG komutunun kullanım şekilleri
 ```
-operand1,operand2
+deger1,deger2
 
 REG,memory
 memory,REG
@@ -116,8 +116,8 @@ REG,memory
 2-LEA komutu ile elde edilecek veri 16 bit uzunluğunda olduğu için hedef  mutlaka word tipinde bir register olmalıdır.
 
 ```
-LEA al,number   -> yanlış bir kullanımdır.
-LEA bx,number   -> doğru bir kullanımdır.
+LEA al,number   ; yanlış bir kullanımdır.
+LEA bx,number   ; doğru bir kullanımdır.
 ``` 
 
 ## Örnekler
@@ -144,7 +144,7 @@ INC reg or memory
 
 1-Anlık değerlerde arttırma işlemi yapılamaz(Örn: 5,42h,11000001b vb.)
 ```
-INC 20h   -> yanlış bir kullanımdır.
+INC 20h   ; yanlış bir kullanımdır.
 ``` 
 
 ## Örnek
@@ -165,7 +165,7 @@ DEC reg or memory
 
 1-INC komutunda olduğu gibi anlık değerlerde eksiltme işlemi yapılamaz.
 ```
-DEC 11100101b   -> yanlış bir kullanımdır.
+DEC 11100101b   ; yanlış bir kullanımdır.
 ``` 
 
 ## Örnek
@@ -182,7 +182,7 @@ XLAT/XLATB(Translate byte) komutunu genelde bir dizideki elemanı al kaydedicisi
 Komutun işleyişi şu şekildedir; ilk olarak istenen elemanın konumu al kaydedicisine çekilir, aynı zamanda da bx içerisinde de dizinin başlangıç adresi bulunması gerekmektedir. XLAT/XLATB komutu bayrakları etkilemez. Örnekler üzerinden daha iyi anlaşılacaktır.
 
 ```
-XLATB   -> Herhangi bir operand almaz. Sade şekilde kullanılır. 
+XLATB   ; Herhangi bir deger almaz. Sade şekilde kullanılır. 
 ```
 ## Örnekler
 
