@@ -210,3 +210,7 @@ kullanılabilir.
 ![idiv](../assets/img/aritmetik-idiv.png)
 
 Özetle (-182) / 9 = (-20) kalan ise -2 burada kalan aynı şekilde AH registerisi içerisinde gösterilirken bölüm AL registerisi içerisinde gösterilmiştir.
+
+## CBW(tamamlanacak)
+
+## CWD(tamamlanacak)
